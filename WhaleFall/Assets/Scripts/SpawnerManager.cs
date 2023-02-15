@@ -42,11 +42,17 @@ public class SpawnerManager : MonoBehaviour
         var position = new Vector3(xPosition, yPosition, 0);
         normalWhale.transform.position = position;
 
-        //-------------test
+        // unterschiedliche Geschwindigkeit
         var direction = new Vector3(0, 1, 0);
         var speed = Random.Range(normalWhaleSpeedMin, normalWhaleSpeedMax);
+
         var rigidbody = normalWhale.GetComponent<Rigidbody2D>();
+
         rigidbody.AddForce(direction * speed, ForceMode2D.Impulse);
+
+        // Drehung
+        var rotation = Random.Range(normalWhaleRotationMin, normalWhaleRotationMax);
+        rigidbody.AddTorque(rotation);
     }
     private void Start()
     {
