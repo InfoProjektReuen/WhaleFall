@@ -11,9 +11,6 @@ public class SpawnerManager : MonoBehaviour
     public float SpawnRateMinimum = 0.5f;
     public float SpawnRateMaximum = 1.5f;
 
-    public float normalWhaleRotationMin = 0.5f;
-    public float normalWhaleRotationMax = 1.5f;
-
     public float normalWhaleSpeedMin = 0.5f;
     public float normalWhaleSpeedMax = 3;
 
@@ -49,10 +46,8 @@ public class SpawnerManager : MonoBehaviour
         var rigidbody = normalWhale.GetComponent<Rigidbody2D>();
 
         rigidbody.AddForce(direction * speed, ForceMode2D.Impulse);
+        
 
-        // Drehung
-        var rotation = Random.Range(normalWhaleRotationMin, normalWhaleRotationMax);
-        rigidbody.AddTorque(rotation);
     }
     private void Start()
     {
