@@ -35,8 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        var groundCheck = Physics2D.Raycast(transform.position, Vector2.down, 0.7f);
-        return groundCheck.collider != null && groundCheck.collider.CompareTag("Ground");
+        
+       return (_playerRigidbody.velocity.y == 0f);
     }
 
    
