@@ -22,8 +22,9 @@ public class PlayerMovement : MonoBehaviour
     {
         MovePlayer();
 
-        if (Input.GetKey(KeyCode.Space) && IsGrounded())
+        if (Input.GetKey(KeyCode.Space) && IsGrounded()){
             Jump();
+        }
     }
     private void MovePlayer()
     {
