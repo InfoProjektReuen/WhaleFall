@@ -6,7 +6,7 @@ public class normalWhaleDestroyManager : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("ground"))
+        if (other.gameObject.CompareTag("Ground"))
         { 
             Destroy(gameObject, 0.5f);
         }
