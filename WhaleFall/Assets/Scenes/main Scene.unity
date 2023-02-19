@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 154461077}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.24, y: -5.09, z: 11.352986}
+  m_LocalPosition: {x: 1.7648618, y: -5.09, z: 11.352986}
   m_LocalScale: {x: 0.1311391, y: 0.1311391, z: 0.1311391}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -985,7 +985,7 @@ Transform:
   m_Children:
   - {fileID: 154461078}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &302971146
 MonoBehaviour:
@@ -1138,7 +1138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Camera: {fileID: 519420031}
-  Player: {fileID: 0}
+  Player: {fileID: 302971144}
   NormalWhalePrefabs:
   - {fileID: 498017098763521397, guid: 2e71758707196e0479bc29f54aa11c0a, type: 3}
   SpawnRateMinimum: 0.5
