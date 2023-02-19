@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         var horizontalInput = Input.GetAxisRaw("Horizontal");
         _playerRigidbody.velocity = new Vector2(horizontalInput * playerSpeed, _playerRigidbody.velocity.y);
     }
-    private void Jump() => _playerRigidbody.velocity = new Vector2( 0, jumpPower);
+    private void Jump() {_playerRigidbody.velocity = new Vector2( 0, jumpPower); _playerRigidbody.gravityScale = 1;}
 
     private bool IsGrounded()
     {
