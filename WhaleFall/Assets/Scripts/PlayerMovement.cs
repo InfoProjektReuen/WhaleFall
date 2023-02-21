@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool canSuperJump = true;
     private Rigidbody2D _playerRigidbody;
-    private float lastSuperJumpTime;
+    public float lastSuperJumpTime;
 
     private void Start()
     {

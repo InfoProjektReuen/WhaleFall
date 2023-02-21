@@ -7,6 +7,7 @@ TagManager:
   - left
   - right
   - Ground
+  - NormalerWal
   layers:
   - Default
   - TransparentFX
