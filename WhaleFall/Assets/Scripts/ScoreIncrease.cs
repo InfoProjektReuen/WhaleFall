@@ -9,7 +9,7 @@ public class ScoreIncrease : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other){
         if(other.gameObject.CompareTag("NormalerWal")){
             myGameManager._score += 5;
-            
+            PlayerPrefs.SetInt("Score", myGameManager._score);
         }
     }
 }
