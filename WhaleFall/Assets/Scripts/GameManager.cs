@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     {
         _gameOver = false;
         _score = 0;
-        PlayerPrefs.SetInt("Score", 0);
+        
     }
 
     // Update is called once per frame
