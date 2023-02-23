@@ -12,5 +12,11 @@ public class ScoreIncrease : MonoBehaviour
             PlayerPrefs.SetInt("Score", myGameManager._score);
             PlayerPrefs.Save();
         }
+        if (other.gameObject.CompareTag("GigaWal"))
+        {
+            myGameManager._score += 10;
+            PlayerPrefs.SetInt("Score", myGameManager._score);
+            PlayerPrefs.Save();
+        }
     }
 }
