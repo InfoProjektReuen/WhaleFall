@@ -1282,7 +1282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 399116578}
-  - component: {fileID: 399116577}
+  - component: {fileID: 399116579}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -1290,26 +1290,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &399116577
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 399116576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6949aa45bb612a545936fbf76316593e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Camera: {fileID: 519420031}
-  Player: {fileID: 302971144}
-  NormalWhalePrefabs:
-  - {fileID: 498017098763521397, guid: 2e71758707196e0479bc29f54aa11c0a, type: 3}
-  SpawnRateMinimum: 0.5
-  SpawnRateMaximum: 1.5
-  normalWhaleSpeedMin: 1
-  normalWhaleSpeedMax: 3
 --- !u!4 &399116578
 Transform:
   m_ObjectHideFlags: 0
@@ -1325,6 +1305,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &399116579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399116576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f306f860fcffaf9469a329012cacf7d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Camera: {fileID: 519420031}
+  Player: {fileID: 302971144}
+  NormalWhalePrefabs:
+  - {fileID: 498017098763521397, guid: 2e71758707196e0479bc29f54aa11c0a, type: 3}
+  SpawnRateMinimum: 0.5
+  SpawnRateMaximum: 1.5
+  normalWhaleSpeedMin: 0.5
+  normalWhaleSpeedMax: 3
 --- !u!1 &442871727
 GameObject:
   m_ObjectHideFlags: 0
