@@ -8,6 +8,7 @@ TagManager:
   - right
   - Ground
   - NormalerWal
+  - GigaWal
   layers:
   - Default
   - TransparentFX
