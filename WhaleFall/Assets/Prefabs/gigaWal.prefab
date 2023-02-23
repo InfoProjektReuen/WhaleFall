@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6300151502539869744}
   - component: {fileID: 6422149857156743318}
   - component: {fileID: -6822987745358167807}
+  - component: {fileID: 1318831147703682220}
   m_Layer: 0
   m_Name: gigaWal
   m_TagString: GigaWal
@@ -146,6 +147,18 @@ PolygonCollider2D:
       - {x: 1.1683307, y: 1.491945}
       - {x: 1.425127, y: 1.4340931}
       - {x: 1.8688936, y: 1.3915944}
+--- !u!114 &1318831147703682220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2777907605220077616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85ce04ca5fda7344db85abcebb9e4d36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4878931453832730517
 GameObject:
   m_ObjectHideFlags: 0

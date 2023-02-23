@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class normalWhaleDestroyManager : MonoBehaviour
+public class WhaleDestroyManager : MonoBehaviour
 {
     private void OnCollisionEnter2D(Collision2D other)
     {
