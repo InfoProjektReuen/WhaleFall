@@ -1284,7 +1284,7 @@ GameObject:
   - component: {fileID: 399116578}
   - component: {fileID: 399116579}
   m_Layer: 0
-  m_Name: SpawnManager
+  m_Name: normalWhaleSpawnManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
