@@ -8,11 +8,17 @@ public class gigaWhaleSpawnerManager : MonoBehaviour
     public GameObject Player;
     public GameObject[] gigaWhalePrefabs;
 
-    [SerializeField] private float SpawnRateMinimumGW = 2.2f;
-    [SerializeField] private float SpawnRateMaximumGW = 6.2f;
+    [SerializeField]
+    private float SpawnRateMinimumGW = 2.2f;
 
-    [SerializeField] private float gigaWhaleSpeedMinGW = 0.0001f;
-    [SerializeField] private float gigaWhaleSpeedMaxGW = 0.001f;
+    [SerializeField]
+    private float SpawnRateMaximumGW = 6.2f;
+
+    [SerializeField]
+    private float gigaWhaleSpeedMinGW = 0.0001f;
+
+    [SerializeField]
+    private float gigaWhaleSpeedMaxGW = 0.001f;
 
     private float _nextSpawnTimeGW;
 
