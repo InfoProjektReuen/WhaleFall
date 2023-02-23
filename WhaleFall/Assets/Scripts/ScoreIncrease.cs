@@ -10,6 +10,7 @@ public class ScoreIncrease : MonoBehaviour
         if(other.gameObject.CompareTag("NormalerWal")){
             myGameManager._score += 5;
             PlayerPrefs.SetInt("Score", myGameManager._score);
+            PlayerPrefs.Save();
         }
     }
 }

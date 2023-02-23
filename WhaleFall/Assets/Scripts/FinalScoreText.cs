@@ -11,7 +11,10 @@ public class FinalScoreText : MonoBehaviour
 
     void Start()
     {
-        _scoreText.text = "Score: " + PlayerPrefs.GetInt("Score");
+        int score = PlayerPrefs.GetInt("Score"); // Versuchen, den gespeicherten Score zu bekommen, und den Standardwert auf -1 setzen, wenn kein Wert gefunden wird.
+        
+
+        _scoreText.text = "Score: " + score;
     }
 
     

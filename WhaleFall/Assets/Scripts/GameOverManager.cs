@@ -11,5 +11,6 @@ public class GameOverManager : MonoBehaviour
     {
         SceneManager.LoadScene("StartMenu");
         myGameManager._gameOver = false;
+        
     }
 }
