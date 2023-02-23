@@ -21,8 +21,16 @@ public class normalWhaleSpawnerManager : MonoBehaviour
         _nextSpawnTime = Time.time + UnityEngine.Random.Range(SpawnRateMinimum, SpawnRateMaximum);
     }
 
-    private void SpawnNormalWhale()
+    private void normalWhaleOnVolcano()
     {
+        
+    }
+
+    IEnumerator SpawnNormalWhale()
+    {
+        //VULKAN SPAWN----------------------------------------
+        yield return new WaitForSeconds(5);
+        //VULKAN DELETE---------------------------------------
         var prefabIndexToSpawn = Random.Range(0, NormalWhalePrefabs.Length);
         var prefabToSpawn = NormalWhalePrefabs[prefabIndexToSpawn];
 
@@ -58,7 +66,7 @@ public class normalWhaleSpawnerManager : MonoBehaviour
     {
         if(Time.time >= _nextSpawnTime)
         {
-            SpawnNormalWhale();
+            StartCoroutine(SpawnNormalWhale());
             DetermineNextSpawnTime();
         }
     }
