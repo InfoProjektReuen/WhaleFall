@@ -8,7 +8,7 @@ public class normalWhaleDestroyManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Ground"))
         { 
-            Destroy(gameObject, 0.5f);
+            Destroy(gameObject);
         }
     }
     // Start is called before the first frame update
