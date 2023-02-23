@@ -11,6 +11,11 @@ public class CollisionDetection : MonoBehaviour
             myGameManager._gameOver = true;
             SceneManager.LoadScene("GameOverScreen");
         }
+        if (other.gameObject.CompareTag("GigaWal"))
+        {
+            myGameManager._gameOver = true;
+            SceneManager.LoadScene("GameOverScreen");
+        }
     }
     
     void Start()
