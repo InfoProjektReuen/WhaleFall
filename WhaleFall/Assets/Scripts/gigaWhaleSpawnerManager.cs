@@ -38,8 +38,7 @@ public class gigaWhaleSpawnerManager : MonoBehaviour
         float xPosition;
 
         var halfWidth = Camera.orthographicSize + Camera.aspect; // halbe Breite von Spielfeld
-        xPosition = Random.Range(-halfWidth + 2, 2 * halfWidth - 2); // Wal spawnt auf ganzer Spielfeldbreite
-
+        xPosition = Random.Range(-halfWidth - 4, halfWidth - 0.5f); // Wal spawnt auf ganzer Spielfeldbreite
         yPosition = (Camera.orthographicSize + 1); // Wal spawnt über Kamera
 
         var position = new Vector3(xPosition, yPosition, 0);
