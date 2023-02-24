@@ -16,23 +16,35 @@ public class normalWhaleSpawnerManager : MonoBehaviour
 
     private float _nextSpawnTime;
 
+
     private void DetermineNextSpawnTime()
     {
         _nextSpawnTime = Time.time + UnityEngine.Random.Range(SpawnRateMinimum, SpawnRateMaximum);
     }
-
+    
     private void normalWhaleOnVolcano()
     {
-        
+        var prefabToSpawnVolcano = NormalWhalePrefabs[1];
+
+        var normalWhaleVolcano = Instantiate(prefabToSpawnVolcano, transform);
+        normalWhaleVolcano.transform.position = new Vector3(0, 0, 0);
+
+        var directionVolcano = new Vector3(0, 1, 0);
+        var speedVolcano = 10;
+
+        var rigidbodyVolcano = normalWhaleVolcano.GetComponent<Rigidbody2D>();
+        rigidbodyVolcano.gravityScale = 0;
+        rigidbodyVolcano.AddForce(directionVolcano * speedVolcano, ForceMode2D.Impulse);
+
+        Destroy(normalWhaleVolcano, 10);
     }
 
     IEnumerator SpawnNormalWhale()
     {
-        //VULKAN SPAWN----------------------------------------
+        normalWhaleOnVolcano();
         yield return new WaitForSeconds(5);
         //VULKAN DELETE---------------------------------------
-        var prefabIndexToSpawn = Random.Range(0, NormalWhalePrefabs.Length);
-        var prefabToSpawn = NormalWhalePrefabs[prefabIndexToSpawn];
+        var prefabToSpawn = NormalWhalePrefabs[0];
 
         var normalWhale = Instantiate(prefabToSpawn, transform);
 

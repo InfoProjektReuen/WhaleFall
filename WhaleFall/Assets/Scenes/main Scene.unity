@@ -1321,6 +1321,7 @@ MonoBehaviour:
   Player: {fileID: 302971144}
   NormalWhalePrefabs:
   - {fileID: 498017098763521397, guid: 2e71758707196e0479bc29f54aa11c0a, type: 3}
+  - {fileID: 7900822073759836397, guid: b2fe38d4d49ba194fbd00a2fc0fffc09, type: 3}
   SpawnRateMinimum: 0.5
   SpawnRateMaximum: 1.5
   normalWhaleSpeedMin: 0.5
