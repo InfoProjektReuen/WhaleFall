@@ -27,10 +27,30 @@ public class gigaWhaleSpawnerManager : MonoBehaviour
         _nextSpawnTimeGW = Time.time + UnityEngine.Random.Range(SpawnRateMinimumGW, SpawnRateMaximumGW);
     }
 
-    private void SpawnGigaWhale()
+    private void gigaWhaleOnVolcano()
     {
-        var prefabIndexToSpawn = Random.Range(0, gigaWhalePrefabs.Length);
-        var prefabToSpawn = gigaWhalePrefabs[prefabIndexToSpawn];
+        var prefabToSpawnVolcanoGW = gigaWhalePrefabs[1];
+
+        var gigaWhaleVolcano = Instantiate(prefabToSpawnVolcanoGW, transform);
+        gigaWhaleVolcano.transform.position = new Vector3(7.69f, 1.37f, 0);
+
+        var directionVolcanoGW = new Vector3(0, 1, 0);
+        var speedVolcanoGW = 10;
+
+        var rigidbodyVolcanoGW = gigaWhaleVolcano.GetComponent<Rigidbody2D>();
+        rigidbodyVolcanoGW.gravityScale = 0;
+        rigidbodyVolcanoGW.AddForce(directionVolcanoGW * speedVolcanoGW, ForceMode2D.Impulse);
+
+        Destroy(gigaWhaleVolcano, 1);
+    }
+    
+    IEnumerator SpawnGigaWhale()
+    {
+        gigaWhaleOnVolcano();
+        yield return new WaitForSeconds(1);
+
+
+        var prefabToSpawn = gigaWhalePrefabs[0];
 
         var gigaWhale = Instantiate(prefabToSpawn, transform);
 
@@ -63,7 +83,7 @@ public class gigaWhaleSpawnerManager : MonoBehaviour
     {
         if (Time.time >= _nextSpawnTimeGW)
         {
-            SpawnGigaWhale();
+            StartCoroutine(SpawnGigaWhale());
             DetermineNextSpawnTimeGW();
         }
     }

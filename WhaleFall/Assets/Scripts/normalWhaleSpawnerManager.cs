@@ -36,14 +36,15 @@ public class normalWhaleSpawnerManager : MonoBehaviour
         rigidbodyVolcano.gravityScale = 0;
         rigidbodyVolcano.AddForce(directionVolcano * speedVolcano, ForceMode2D.Impulse);
 
-        Destroy(normalWhaleVolcano, 10);
+        Destroy(normalWhaleVolcano, 1);
     }
 
     IEnumerator SpawnNormalWhale()
     {
         normalWhaleOnVolcano();
-        yield return new WaitForSeconds(5);
-        //VULKAN DELETE---------------------------------------
+        yield return new WaitForSeconds(1);
+
+
         var prefabToSpawn = NormalWhalePrefabs[0];
 
         var normalWhale = Instantiate(prefabToSpawn, transform);

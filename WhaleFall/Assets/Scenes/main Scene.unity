@@ -2017,6 +2017,7 @@ MonoBehaviour:
   Player: {fileID: 302971144}
   gigaWhalePrefabs:
   - {fileID: 2777907605220077616, guid: 8cdd64b6df76a7f43968b032b921f1df, type: 3}
+  - {fileID: 8621874023585707883, guid: feb3464abb6c78247abf01e9abd271a4, type: 3}
   SpawnRateMinimumGW: 2.2
   SpawnRateMaximumGW: 6.2
   gigaWhaleSpeedMinGW: 0.0001
