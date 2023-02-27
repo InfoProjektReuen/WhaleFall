@@ -16,6 +16,7 @@ public class CollisionDetection : MonoBehaviour
             myGameManager._gameOver = true;
             SceneManager.LoadScene("GameOverScreen");
         }
+        
     }
     
     void Start()

@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _playerRigidbody;
     public float lastSuperJumpTime;
 
+    public WeaponSystem[] WeaponSystems;
+    private int _currentWeaponSystemIndex = 0;
+
     private void Start()
     {
         _playerRigidbody = GetComponent<Rigidbody2D>();
@@ -33,6 +36,11 @@ public class PlayerMovement : MonoBehaviour
 
         else if(Input.GetKey(KeyCode.Return) && IsGrounded()){
             SJump();
+        }
+
+        else if (Input.GetKey(KeyCode.W))
+        {
+            WeaponSystems[_currentWeaponSystemIndex].Fire();
         }
     }
     private void MovePlayer()

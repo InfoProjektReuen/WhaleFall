@@ -17,8 +17,8 @@ public class WhaleDestroyManager : MonoBehaviour
         Destroy(gameObject, 30);
     }
 
-    private void Update()
+    public void WhaleDestroy()
     {
-
+        Destroy(gameObject);
     }
 }
