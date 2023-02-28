@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - NormalerWal
   - GigaWal
+  - Laser
   layers:
   - Default
   - TransparentFX

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponSystem : MonoBehaviour
 {
-    public Transform[] SpawnPoints;
+    public Transform SpawnPoint;
     public Bullet BulletPrefab;
     public float fireRate = 1f;
 
@@ -20,10 +20,7 @@ public class WeaponSystem : MonoBehaviour
         {
             _fireRateCounter = 0;
             
-            foreach (var spawnPoint in SpawnPoints)
-            {
-                Instantiate(BulletPrefab, spawnPoint);
-            }
+            Instantiate(BulletPrefab, SpawnPoint);
         }
     }
 }
