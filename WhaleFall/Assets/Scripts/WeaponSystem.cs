@@ -20,7 +20,8 @@ public class WeaponSystem : MonoBehaviour
         {
             _fireRateCounter = 0;
             
-            Instantiate(BulletPrefab, SpawnPoint);
+            var test = Instantiate(BulletPrefab, SpawnPoint);
+            test.transform.SetParent(null);
         }
     }
 }
