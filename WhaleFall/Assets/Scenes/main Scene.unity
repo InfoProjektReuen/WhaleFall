@@ -1001,8 +1001,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba074015fd6655041b5c094e6b95ab92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
-  jumpPower: 5
+  playerSpeed: 15
+  jumpPower: 8
   superJumpForce: 20
   cooldownTime_sJump: 5
   lastSuperJumpTime: 0
