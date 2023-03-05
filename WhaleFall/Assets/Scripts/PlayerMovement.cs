@@ -7,8 +7,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float playerSpeed = 5.0f; //Beispielwerte können nach Ausprobieren gerne geändert werden
-    [SerializeField] private float jumpPower = 5.0f;
-    [SerializeField] private float superJumpForce = 7f;
+    [SerializeField] private float jumpPower = 15.0f;
+    [SerializeField] private float superJumpForce = 30.0f;
     [SerializeField] private float cooldownTime_sJump  = 5f;
 
     private bool canSuperJump = true;
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         var horizontalInput = Input.GetAxisRaw("Horizontal");
         _playerRigidbody.velocity = new Vector2(horizontalInput * playerSpeed, _playerRigidbody.velocity.y);
     }
-    private void Jump() {_playerRigidbody.velocity = new Vector2( 0, jumpPower); _playerRigidbody.gravityScale = 1;}
+    private void Jump() {_playerRigidbody.velocity = new Vector2( 0, jumpPower); _playerRigidbody.gravityScale = 4;}
 
     private bool IsGrounded()
     {
@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         {
             
             _playerRigidbody.velocity = new Vector2( 0, superJumpForce);
-            _playerRigidbody.gravityScale = 2;
+            _playerRigidbody.gravityScale = 5;
 
             lastSuperJumpTime = Time.time;
         }

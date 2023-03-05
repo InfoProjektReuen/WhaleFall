@@ -165,7 +165,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 154461077}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: df5229c6e1aca714bbb3a350ebe0d5fc, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -1002,8 +1002,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 15
-  jumpPower: 8
-  superJumpForce: 20
+  jumpPower: 15
+  superJumpForce: 30
   cooldownTime_sJump: 5
   lastSuperJumpTime: 0
   WeaponSystem: {fileID: 1884802124}
