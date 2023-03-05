@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _playerRigidbody;
     public float lastSuperJumpTime;
 
+    private bool facingRight = true;
+
     public WeaponSystem WeaponSystem;
 
     private void Start()
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        ChangeLookDirection();
         MovePlayer();
 
         if (Input.GetKey(KeyCode.Space) && IsGrounded()){
@@ -56,15 +59,26 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void SJump(){
-        if (canSuperJump && (Time.time - lastSuperJumpTime) > cooldownTime_sJump){
+        if (canSuperJump && (Time.time - lastSuperJumpTime) > cooldownTime_sJump)
+        {
             
-                _playerRigidbody.velocity = new Vector2( 0, superJumpForce);
-                _playerRigidbody.gravityScale = 2;
-                lastSuperJumpTime = Time.time;
-            }
+            _playerRigidbody.velocity = new Vector2( 0, superJumpForce);
+            _playerRigidbody.gravityScale = 2;
+
+            lastSuperJumpTime = Time.time;
+        }
     }
 
-    
+    private void ChangeLookDirection()
+    {
+        if (facingRight && Input.GetAxisRaw("Horizontal") < 0 || !facingRight && Input.GetAxisRaw("Horizontal") > 0)
+        {
+            facingRight = !facingRight;
+            Vector3 scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
+        }
+    }
 
    
 }
