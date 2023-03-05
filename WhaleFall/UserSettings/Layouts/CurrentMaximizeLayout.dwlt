@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 21986
+  controlID: 22673
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 21987
+  controlID: 22674
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 21988
+  controlID: 22665
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -557,9 +557,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 9.6856365, y: 0.005906366, z: 3.9535143}
+    m_Target: {x: -0.8341336, y: 3.0234246, z: 3.5707698}
     speed: 2
-    m_Value: {x: 9.6856365, y: 0.005906366, z: 3.9535143}
+    m_Value: {x: -0.8341336, y: 3.0234246, z: 3.5707698}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -610,9 +610,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 7.3077927
+    m_Target: 15.976357
     speed: 2
-    m_Value: 7.3077927
+    m_Value: 15.976357
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -731,21 +731,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Johannes\Documents\GitHub\WhaleFall\WhaleFall
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 67}
-    m_SelectedIDs: c46e0000
-    m_LastClickedID: 28356
+    m_SelectedIDs: bc6e0000
+    m_LastClickedID: 28348
     m_ExpandedIDs: 00000000ac6e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
