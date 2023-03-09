@@ -90,11 +90,17 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void handleDash(){
-        if(Input.GetKeyDown(KeyCode.Tab)){
-            
-            transform.position += transform.forward * dashDistance;
+    if(Input.GetKeyDown(KeyCode.Tab)){
+        if(facingRight){
+            transform.position += transform.right * dashDistance;
+            Debug.Log("Dash");
+        }
+        else{
+            transform.position += -transform.right * dashDistance;
         }
     }
+}
+
 
    
 }
