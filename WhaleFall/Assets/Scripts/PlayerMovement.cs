@@ -46,9 +46,14 @@ public class PlayerMovement : MonoBehaviour
             WeaponSystem.Fire();
         }
 
-        else if(CanMove(transform.forward, dashDistance)){
+        else if(CanMove(transform.right, dashDistance) && facingRight){
             handleDash();
         }
+
+        else if(CanMove(-transform.right, dashDistance) && !facingRight){
+            handleDash();
+        }
+
     }
     private void MovePlayer()
     {
