@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpPower = 15.0f;
     [SerializeField] private float superJumpForce = 30.0f;
     [SerializeField] private float cooldownTime_sJump  = 5f;
+    [SerializeField] private float dashDistance = 10f;
 
     private bool canSuperJump = true;
     private Rigidbody2D _playerRigidbody;
@@ -44,6 +45,10 @@ public class PlayerMovement : MonoBehaviour
         {
             WeaponSystem.Fire();
         }
+
+        else if(CanMove(transform.forward, dashDistance)){
+            handleDash();
+        }
     }
     private void MovePlayer()
     {
@@ -77,6 +82,17 @@ public class PlayerMovement : MonoBehaviour
             Vector3 scale = transform.localScale;
             scale.x *= -1;
             transform.localScale = scale;
+        }
+    }
+
+    private bool CanMove(Vector2 dir, float distance){
+        return (Physics2D.Raycast(transform.position, dir, distance).collider == null);
+    }
+
+    private void handleDash(){
+        if(Input.GetKeyDown(KeyCode.Tab)){
+            
+            transform.position += transform.forward * dashDistance;
         }
     }
 

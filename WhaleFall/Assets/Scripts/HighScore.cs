@@ -4,17 +4,26 @@ using UnityEngine;
 
 public class HighScore : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        if(!PlayerPrefs.HasKey("HighScore")){
-            PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("Score"));
-        }
+private int highScore = 0; // Der Highscore-Wert wird initialisiert.
 
-        else if(PlayerPrefs.HasKey("HighScore") && PlayerPrefs.GetInt("Score") > PlayerPrefs.GetInt("HighScore")){
-            PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("Score"));
-        }
+void Start()
+{
+    if(PlayerPrefs.HasKey("HighScore")) // Überprüfen, ob ein Highscore-Wert in PlayerPrefs vorhanden ist.
+    {
+        highScore = PlayerPrefs.GetInt("HighScore"); // Wenn ja, den Highscore-Wert laden.
     }
 
-   
+    UpdateHighScore(); // Highscore-Wert aktualisieren.
+}
+
+public void UpdateHighScore()
+{
+    int score = PlayerPrefs.GetInt("Score"); // Den aktuellen Spielstand abrufen.
+
+    if(score > highScore) // Überprüfen, ob der aktuelle Spielstand den Highscore übertrifft.
+    {
+        highScore = score; // Wenn ja, den Highscore aktualisieren.
+        PlayerPrefs.SetInt("HighScore", highScore); // Highscore-Wert in PlayerPrefs speichern.
+    }
+}
 }

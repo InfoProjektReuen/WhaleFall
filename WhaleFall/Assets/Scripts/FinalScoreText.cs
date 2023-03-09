@@ -9,7 +9,7 @@ public class FinalScoreText : MonoBehaviour
     public GameManager myGameManager;
     public TextMeshProUGUI _scoreText;
 
-    void Start()
+    private void Start()
     {
         int score = PlayerPrefs.GetInt("Score"); // Versuchen, den gespeicherten Score zu bekommen, und den Standardwert auf -1 setzen, wenn kein Wert gefunden wird.
         
