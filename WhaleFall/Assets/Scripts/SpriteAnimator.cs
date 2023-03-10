@@ -12,17 +12,22 @@ public class SpriteAnimator : MonoBehaviour
     private float timer;
     private float frameRate = .1f;
     private SpriteRenderer spriteRenderer;
-    private bool loop = false;
-    //private bool isPlaying = true;
+    [SerializeField] private bool loop = false;
+    private bool isPlaying = true;
     private int loopCounter = 0;
+    [SerializeField] private bool destroyOnLoop = true;
 
     private void Awake()
     {
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
+    void Start(){
+        spriteRenderer.enabled = true;
+    }
     void Update()
     {
+        if(isPlaying){
         timer += Time.deltaTime;
         if (timer >= frameRate)
         {
@@ -30,7 +35,7 @@ public class SpriteAnimator : MonoBehaviour
             currentFrame = (currentFrame + 1) % frameArray.Length;
             if (!loop && currentFrame == 0)
             {
-                //StopPlaying();
+                StopPlaying();
             }
             else
             {
@@ -49,10 +54,16 @@ public class SpriteAnimator : MonoBehaviour
             }
 
         }
+        
+       }
     }
 
-    //private void StopPlaying()
-    //{
-        //isPlaying = false;
-    //}
+    private void StopPlaying()
+    {
+        isPlaying = false;
+        if (!loop && destroyOnLoop)
+    {
+        spriteRenderer.enabled = false;
+    }
+    }
 }
