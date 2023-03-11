@@ -1002,7 +1002,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba074015fd6655041b5c094e6b95ab92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pDashEffect: {fileID: 1821916728169774267, guid: cc4c87da6aa5a4a409f5376fee7d52a6, type: 3}
+  pDashEffect: {fileID: 4308843138073787030, guid: cc4c87da6aa5a4a409f5376fee7d52a6, type: 3}
+  pDashEffectLinks: {fileID: 8872183773494023083, guid: daa3805c39d8d594c86c40ddf1c2d8b5, type: 3}
   playerSpeed: 15
   jumpPower: 15
   superJumpForce: 30

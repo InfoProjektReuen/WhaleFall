@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public Transform pDashEffect;
+    public GameObject pDashEffect;
+    public GameObject pDashEffectLinks;
     [SerializeField] private float playerSpeed = 5.0f; //Beispielwerte können nach Ausprobieren gerne geändert werden
     [SerializeField] private float jumpPower = 15.0f;
     [SerializeField] private float superJumpForce = 30.0f;
@@ -98,14 +99,20 @@ public class PlayerMovement : MonoBehaviour
     private void handleDash(){
     if(Input.GetKeyDown(KeyCode.Tab)){
         if(facingRight){
-            Vector3 beforeDashPosition = transform.position;
-            Transform dashEffectTransform = Instantiate(pDashEffect, beforeDashPosition, Quaternion.identity);
-            float dashEffectWidth = 500f;
-            dashEffectTransform.localScale = new Vector3(dashDistance/dashEffectWidth, 1f, 1f);
+            Vector3 beforeDashPosition = transform.position - new Vector3 (0f, 5.5f, 0f);
+            GameObject dashEffectObject = Instantiate(pDashEffect, beforeDashPosition, Quaternion.identity);
+            float dashEffectWidth = 2.5f;
+            dashEffectObject.transform.localScale = new Vector3(dashDistance/dashEffectWidth, 1f, 1f);
             transform.position += transform.right * dashDistance;
+
         }
         else{
-            transform.position += -transform.right * dashDistance;
+            Vector3 beforeDashPosition = transform.position - new Vector3 (0f, 5.5f, 0f);
+            Vector3 dashEndPosition = beforeDashPosition - transform.right * dashDistance; // speichere die Endposition des Dashs
+            GameObject dashEffectObject = Instantiate(pDashEffect, dashEndPosition, Quaternion.identity);
+            float dashEffectWidth = 10f;
+            dashEffectObject.transform.localScale = new Vector3(dashDistance/dashEffectWidth, 1f, 1f);
+            transform.position -= transform.right * dashDistance;
         }
     }
 }
