@@ -16,6 +16,7 @@ public class normalWhaleSpawnerManager : MonoBehaviour
 
     private float _nextSpawnTime;
 
+    public int Damage = 1;
 
     private void DetermineNextSpawnTime()
     {

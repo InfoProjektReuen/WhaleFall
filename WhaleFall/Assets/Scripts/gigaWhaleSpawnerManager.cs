@@ -22,6 +22,8 @@ public class gigaWhaleSpawnerManager : MonoBehaviour
 
     private float _nextSpawnTimeGW;
 
+    public int Damage = 2;
+
     private void DetermineNextSpawnTimeGW()
     {
         _nextSpawnTimeGW = Time.time + UnityEngine.Random.Range(SpawnRateMinimumGW, SpawnRateMaximumGW);
