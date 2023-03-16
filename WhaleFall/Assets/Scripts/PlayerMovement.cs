@@ -11,12 +11,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float playerSpeed = 5.0f; //Beispielwerte können nach Ausprobieren gerne geändert werden
     [SerializeField] private float jumpPower = 15.0f;
     [SerializeField] private float superJumpForce = 30.0f;
-    [SerializeField] private float cooldownTime_sJump  = 5f;
+    public float cooldownTime_sJump  = 5f;
     [SerializeField] private float dashDistance = 10f;
+    public float cooldownTime_Dash  = 5f;
 
     private bool canSuperJump = true;
     private Rigidbody2D _playerRigidbody;
     public float lastSuperJumpTime;
+    public float lastDashTime;
 
     private bool facingRight = true;
 
@@ -29,6 +31,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.LogError("Player is missing a Rigidbody2D component");
         }
+        lastDashTime = Time.time - cooldownTime_Dash;
+        lastSuperJumpTime = Time.time - cooldownTime_sJump;
+
     }
     private void Update()
     {
@@ -97,7 +102,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void handleDash(){
-    if(Input.GetKeyDown(KeyCode.Tab)){
+    if(Input.GetKeyDown(KeyCode.Tab) && (Time.time - lastDashTime) > cooldownTime_Dash){
         if(facingRight){
             Vector3 beforeDashPosition = transform.position - new Vector3 (0f, 5.5f, 0f);
             GameObject dashEffectObject = Instantiate(pDashEffect, beforeDashPosition, Quaternion.identity);
@@ -114,6 +119,7 @@ public class PlayerMovement : MonoBehaviour
             dashEffectObject.transform.localScale = new Vector3(dashDistance/dashEffectWidth, 1f, 1f);
             transform.position -= transform.right * dashDistance;
         }
+        lastDashTime = Time.time;
     }
 }
 
