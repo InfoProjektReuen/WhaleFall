@@ -9,9 +9,9 @@ public class CollisionDetection : MonoBehaviour
     public HealthManager healthManager;
     public normalWhaleSpawnerManager nWSpwnManager;
     public gigaWhaleSpawnerManager gWSpwnManager;
+    public GameObject globalLightObject;
 
 
-    public int replaceIndex = 0;
 
     private void gameOverCheck()
     {
@@ -27,15 +27,24 @@ public class CollisionDetection : MonoBehaviour
         if(other.gameObject.CompareTag("NormalerWal")) {
             healthManager.TakeDamage(nWSpwnManager.Damage);
             Destroy(other.gameObject);
+            StartCoroutine(deactivateLight());
             gameOverCheck();
         }
         else if (other.gameObject.CompareTag("GigaWal"))
         {
             healthManager.TakeDamage(gWSpwnManager.Damage);
             Destroy(other.gameObject);
+            StartCoroutine(deactivateLight());
             gameOverCheck();
         }
         
+    }
+
+    private IEnumerator deactivateLight()
+    {
+        globalLightObject.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        globalLightObject.SetActive(false);
     }
     
     void Start()

@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject HealthContainer;
-    public GameObject HealthContainerEmpty;
     public GameObject Leben;
     public GameObject emptyLivePrefab;
     public HealthManager healthManager;
@@ -15,11 +15,17 @@ public class GameManager : MonoBehaviour
     public int _score;
 
     public int emptyLives = -1;
-    //
+
+    public GameObject globalLightObject;
+
+
     void Start()
     {
         _gameOver = false;
         _score = 0;
+        if (SceneManager.GetActiveScene().name == "main Scene") {
+            globalLightObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
