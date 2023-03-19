@@ -136,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 beforeDashPosition = transform.position - new Vector3(0f, 5.5f, 0f);
                 Vector3 dashEndPosition = beforeDashPosition - transform.right * dashDistance; // speichere die Endposition des Dashs
                 GameObject dashEffectObject = Instantiate(pDashEffect_Links, dashEndPosition, Quaternion.identity);
-                float dashEffectWidth = 10f;
+                float dashEffectWidth = 2.5f;
                 dashEffectObject.transform.localScale = new Vector3(dashDistance / dashEffectWidth, 1f, 1f);
                 transform.position -= transform.right * dashDistance;
             }
