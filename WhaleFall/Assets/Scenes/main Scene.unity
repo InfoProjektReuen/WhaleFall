@@ -952,7 +952,7 @@ AudioSource:
   m_GameObject: {fileID: 154461077}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1106536395392007819, guid: 73e19a3383f101d4ead11e4c09e4ba0c, type: 2}
+  OutputAudioMixerGroup: {fileID: 1973966034009341034, guid: 73e19a3383f101d4ead11e4c09e4ba0c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 363d4de231c506744879708605660b7e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -1997,8 +1997,8 @@ AudioSource:
   m_GameObject: {fileID: 302971144}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1106536395392007819, guid: 73e19a3383f101d4ead11e4c09e4ba0c, type: 2}
-  m_audioClip: {fileID: 8300000, guid: fe822a9b36d1b8d429a8c1f5c3b6ae3c, type: 3}
+  OutputAudioMixerGroup: {fileID: -5147248716147328190, guid: 73e19a3383f101d4ead11e4c09e4ba0c, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 4f9538cef9234a14b84dbf3ed4474d34, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.795
   m_Pitch: 1
@@ -2189,7 +2189,7 @@ AudioSource:
   m_GameObject: {fileID: 302971144}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 1106536395392007819, guid: 73e19a3383f101d4ead11e4c09e4ba0c, type: 2}
+  OutputAudioMixerGroup: {fileID: 2129469100717154187, guid: 73e19a3383f101d4ead11e4c09e4ba0c, type: 2}
   m_audioClip: {fileID: 8300000, guid: 1a781e74b4dbe364488ae324c9c39fdd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -2520,6 +2520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 399116578}
   - component: {fileID: 399116579}
+  - component: {fileID: 399116580}
   m_Layer: 0
   m_Name: normalWhaleSpawnManager
   m_TagString: Untagged
@@ -2564,6 +2565,103 @@ MonoBehaviour:
   normalWhaleSpeedMin: 0.5
   normalWhaleSpeedMax: 3
   Damage: 1
+  volcanoPop: {fileID: 399116580}
+--- !u!82 &399116580
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399116576}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 1106536395392007819, guid: 73e19a3383f101d4ead11e4c09e4ba0c, type: 2}
+  m_audioClip: {fileID: 8300000, guid: c98b6197176bf56459e4c923146a5f0d, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.559
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &442871727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,8 +2722,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450063559}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.42, y: -6.5, z: 11.352986}
-  m_LocalScale: {x: 2.379033, y: 0.8497, z: 1}
+  m_LocalPosition: {x: 1.35, y: -6.55, z: 11.352986}
+  m_LocalScale: {x: 1.411006, y: 0.8497, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 302971145}
@@ -3406,6 +3504,7 @@ GameObject:
   m_Component:
   - component: {fileID: 880749462}
   - component: {fileID: 880749461}
+  - component: {fileID: 880749463}
   m_Layer: 0
   m_Name: HealthManager
   m_TagString: Untagged
@@ -3427,7 +3526,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maximumHealth: 3
   currentHealth: 0
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 951197195}
+  lifeUpSFX: {fileID: 880749463}
 --- !u!4 &880749462
 Transform:
   m_ObjectHideFlags: 0
@@ -3443,6 +3543,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &880749463
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880749460}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 1106536395392007819, guid: 73e19a3383f101d4ead11e4c09e4ba0c, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 5e0ae53e2292b4546a89b8a6c4865fdc, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.785
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &950502304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4239,6 +4435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1387650694}
   - component: {fileID: 1387650695}
+  - component: {fileID: 1387650696}
   m_Layer: 0
   m_Name: lifeUpCollectableSpawnManager
   m_TagString: Untagged
@@ -4282,6 +4479,103 @@ MonoBehaviour:
   SpawnRateMaximum: 30
   lifeUpSpeedMin: 0.0001
   lifeUpSpeedMax: 3
+  volcanoLifeSFX: {fileID: 1387650696}
+--- !u!82 &1387650696
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1387650693}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 1106536395392007819, guid: 73e19a3383f101d4ead11e4c09e4ba0c, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 53fc7abcceaae0f45abb326c8f4f0ad7, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.742
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1447088186
 GameObject:
   m_ObjectHideFlags: 0
@@ -4336,6 +4630,7 @@ MonoBehaviour:
   gigaWhaleSpeedMinGW: 0.0001
   gigaWhaleSpeedMaxGW: 0.001
   Damage: 2
+  volcanoPop: {fileID: 399116580}
 --- !u!1 &1477574809
 GameObject:
   m_ObjectHideFlags: 0

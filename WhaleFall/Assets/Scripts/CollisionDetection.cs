@@ -16,21 +16,12 @@ public class CollisionDetection : MonoBehaviour
     public AudioSource hitSFX;
     public AudioSource deadSFX;
 
-
     private void gameOverCheck()
     {
         if (healthManager.currentHealth <= 0)
         {
             myGameManager._gameOver = true;
             SceneManager.LoadScene("GameOverScreen");
-           /* while (!sceneLoaded)
-            {
-                if(SceneManager.GetActiveScene().name == "GameOverScreen")
-                {
-                    sceneLoaded = true;
-                    deadSFX.Play();
-                }
-            }*/
         }
     }
 
@@ -73,7 +64,10 @@ public class CollisionDetection : MonoBehaviour
     
     void Start()
     {
-
+        if (SceneManager.GetActiveScene().name == "GameOverScreen")
+        {
+            deadSFX.Play();
+        }
     }
 
     // Update is called once per frame

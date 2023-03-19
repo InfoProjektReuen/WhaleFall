@@ -24,6 +24,8 @@ public class gigaWhaleSpawnerManager : MonoBehaviour
 
     public int Damage = 2;
 
+    public AudioSource volcanoPop;
+
     private void DetermineNextSpawnTimeGW()
     {
         _nextSpawnTimeGW = Time.time + UnityEngine.Random.Range(SpawnRateMinimumGW, SpawnRateMaximumGW);
@@ -35,6 +37,8 @@ public class gigaWhaleSpawnerManager : MonoBehaviour
 
         var gigaWhaleVolcano = Instantiate(prefabToSpawnVolcanoGW, transform);
         gigaWhaleVolcano.transform.position = new Vector3(7.69f, 1.37f, 0);
+
+        volcanoPop.Play();
 
         var directionVolcanoGW = new Vector3(0, 1, 0);
         var speedVolcanoGW = 10;

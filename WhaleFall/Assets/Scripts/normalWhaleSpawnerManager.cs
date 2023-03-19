@@ -18,6 +18,8 @@ public class normalWhaleSpawnerManager : MonoBehaviour
 
     public int Damage = 1;
 
+    public AudioSource volcanoPop;
+
     private void DetermineNextSpawnTime()
     {
         _nextSpawnTime = Time.time + UnityEngine.Random.Range(SpawnRateMinimum, SpawnRateMaximum);
@@ -29,6 +31,8 @@ public class normalWhaleSpawnerManager : MonoBehaviour
 
         var normalWhaleVolcano = Instantiate(prefabToSpawnVolcano, transform);
         normalWhaleVolcano.transform.position = new Vector3(0, 0, 0);
+
+        volcanoPop.Play();
 
         var directionVolcano = new Vector3(0, 1, 0);
         var speedVolcano = 10;

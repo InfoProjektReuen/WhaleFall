@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85ce04ca5fda7344db85abcebb9e4d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 4876077279555814864, guid: 24ad9ff72e71a534db98d8d4ff97dd0f, type: 3}
 --- !u!60 &705163906043515650
 PolygonCollider2D:
   m_ObjectHideFlags: 0

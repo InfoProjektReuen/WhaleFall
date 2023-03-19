@@ -16,6 +16,8 @@ public class LiveCollectableManager : MonoBehaviour
 
     private float _nextSpawnTime;
 
+    public AudioSource volcanoLifeSFX;
+
     private void DetermineNextSpawnTime()
     {
         _nextSpawnTime = Time.time + UnityEngine.Random.Range(SpawnRateMinimum, SpawnRateMaximum);
@@ -27,6 +29,8 @@ public class LiveCollectableManager : MonoBehaviour
 
         var lifeUpVolcano = Instantiate(prefabToSpawnVolcano, transform);
         lifeUpVolcano.transform.position = new Vector3(0, 0, 0);
+
+        volcanoLifeSFX.Play();
 
         var directionVolcano = new Vector3(0, 1, 0);
         var speedVolcano = 10;
