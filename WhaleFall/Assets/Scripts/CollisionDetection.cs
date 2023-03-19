@@ -11,6 +11,10 @@ public class CollisionDetection : MonoBehaviour
     public gigaWhaleSpawnerManager gWSpwnManager;
     public GameObject globalLightObject;
 
+    public bool sceneLoaded = false;
+
+    public AudioSource hitSFX;
+    public AudioSource deadSFX;
 
 
     private void gameOverCheck()
@@ -19,6 +23,14 @@ public class CollisionDetection : MonoBehaviour
         {
             myGameManager._gameOver = true;
             SceneManager.LoadScene("GameOverScreen");
+           /* while (!sceneLoaded)
+            {
+                if(SceneManager.GetActiveScene().name == "GameOverScreen")
+                {
+                    sceneLoaded = true;
+                    deadSFX.Play();
+                }
+            }*/
         }
     }
 
@@ -27,6 +39,10 @@ public class CollisionDetection : MonoBehaviour
             healthManager.TakeDamage(nWSpwnManager.Damage);
             Destroy(other.gameObject);
             StartCoroutine(deactivateLight());
+            if(healthManager.currentHealth >= 1)
+            {
+                hitSFX.Play();
+            }
             gameOverCheck();
         }
         else if (other.gameObject.CompareTag("GigaWal"))
@@ -34,6 +50,10 @@ public class CollisionDetection : MonoBehaviour
             healthManager.TakeDamage(gWSpwnManager.Damage);
             Destroy(other.gameObject);
             StartCoroutine(deactivateLight());
+            if (healthManager.currentHealth >= 1)
+            {
+                hitSFX.Play();
+            }
             gameOverCheck();
         }
         else if (other.gameObject.CompareTag("LifeUp"))

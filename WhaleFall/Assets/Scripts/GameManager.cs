@@ -19,8 +19,10 @@ public class GameManager : MonoBehaviour
     public GameObject globalLightObject;
 
     public AudioSource mainMenuMusic;
+    public AudioSource gameMusic;
 
     public bool playingMainMenu = false;
+    public bool playingGameMusic = false;
 
     void Start()
     {
@@ -35,7 +37,13 @@ public class GameManager : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "StartMenu" && !playingMainMenu)
         {
+            setFalse(playingGameMusic);
             playMainMenuMusic();
+        }
+        else if(SceneManager.GetActiveScene().name == "main Scene" && !playingGameMusic)
+        {
+            setFalse(playingMainMenu);
+            playGameMusic();
         }
     }
 
@@ -59,5 +67,16 @@ public class GameManager : MonoBehaviour
     {
         mainMenuMusic.Play();
         playingMainMenu = true;
+    }
+
+    private void playGameMusic()
+    {
+        gameMusic.Play();
+        playingGameMusic = true;
+    }
+
+    private void setFalse(bool variable)
+    {
+        variable = false;
     }
 }

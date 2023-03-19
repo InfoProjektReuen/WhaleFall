@@ -9,8 +9,15 @@ public class GameOverManager : MonoBehaviour
 
     public void ReturnToMenu()
     {
-        SceneManager.LoadScene("StartMenu");
-        myGameManager._gameOver = false;
-        
+        if (SceneManager.GetActiveScene().name == "GameOverScreen")
+        {
+            SceneManager.LoadScene("StartMenu");
+
+            myGameManager = GameObject.FindObjectOfType<GameManager>();
+            if (myGameManager != null)
+            {
+                myGameManager._gameOver = false;
+            }
+        }
     }
 }

@@ -169,5 +169,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Rigidbody: {fileID: 7395176381776892487}
-  BulletSpeed: 15
+  BulletSpeed: 30
   myGameManager: {fileID: 0}

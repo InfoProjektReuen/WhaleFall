@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     public WeaponSystem WeaponSystem;
 
     public AudioSource dashSound;
+    public AudioSource jumpSFX;
+    public AudioSource sJumpSFX;
 
     private void Start()
     {
@@ -73,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
         var horizontalInput = Input.GetAxisRaw("Horizontal");
         _playerRigidbody.velocity = new Vector2(horizontalInput * playerSpeed, _playerRigidbody.velocity.y);
     }
-    private void Jump() { _playerRigidbody.velocity = new Vector2(0, jumpPower); _playerRigidbody.gravityScale = 4; }
+    private void Jump() { _playerRigidbody.velocity = new Vector2(0, jumpPower); _playerRigidbody.gravityScale = 4; jumpSFX.Play(); }
 
     private bool IsGrounded()
     {
@@ -88,6 +90,8 @@ public class PlayerMovement : MonoBehaviour
 
             _playerRigidbody.velocity = new Vector2(0, superJumpForce);
             _playerRigidbody.gravityScale = 5;
+            
+            sJumpSFX.Play();
 
             lastSuperJumpTime = Time.time;
         }

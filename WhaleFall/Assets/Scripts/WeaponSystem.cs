@@ -9,6 +9,9 @@ public class WeaponSystem : MonoBehaviour
     public float fireRate = 1f;
 
     private float _fireRateCounter;
+
+    public AudioSource shootSFX;
+
     private void Update()
     {
         _fireRateCounter += Time.deltaTime;
@@ -22,6 +25,8 @@ public class WeaponSystem : MonoBehaviour
             
             var test = Instantiate(BulletPrefab, SpawnPoint);
             test.transform.SetParent(null);
+
+            shootSFX.Play();
         }
     }
 }
