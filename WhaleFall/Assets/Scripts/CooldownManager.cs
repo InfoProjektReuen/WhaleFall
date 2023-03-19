@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+//Importieren
 public class CooldownManager : MonoBehaviour
 {
     public PlayerMovement myPlayerMovement;
