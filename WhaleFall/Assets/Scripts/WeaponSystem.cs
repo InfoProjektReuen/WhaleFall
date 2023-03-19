@@ -8,7 +8,7 @@ public class WeaponSystem : MonoBehaviour
     public Bullet BulletPrefab;
     public float fireRate = 1f;
 
-    private float _fireRateCounter;
+    public float _fireRateCounter = 0f;
 
     public AudioSource shootSFX;
 
