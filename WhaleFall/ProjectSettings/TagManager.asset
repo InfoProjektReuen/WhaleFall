@@ -10,6 +10,7 @@ TagManager:
   - NormalerWal
   - GigaWal
   - Laser
+  - LifeUp
   layers:
   - Default
   - TransparentFX

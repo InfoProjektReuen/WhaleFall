@@ -19,7 +19,6 @@ public class CollisionDetection : MonoBehaviour
         {
             myGameManager._gameOver = true;
             SceneManager.LoadScene("GameOverScreen");
-            healthManager.refreshHealth();
         }
     }
 
@@ -36,6 +35,11 @@ public class CollisionDetection : MonoBehaviour
             Destroy(other.gameObject);
             StartCoroutine(deactivateLight());
             gameOverCheck();
+        }
+        else if (other.gameObject.CompareTag("LifeUp"))
+        {
+            healthManager.LifeUp();
+            Destroy(other.gameObject);
         }
         
     }

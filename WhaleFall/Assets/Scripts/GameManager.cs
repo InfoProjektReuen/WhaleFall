@@ -21,7 +21,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        _gameOver = false;
         _score = 0;
         if (SceneManager.GetActiveScene().name == "main Scene") {
             globalLightObject.SetActive(false);

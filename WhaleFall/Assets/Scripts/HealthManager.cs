@@ -33,4 +33,13 @@ public class HealthManager : MonoBehaviour
         currentHealth -= Damage;
         gameManager.setHealth(currentHealth);
     }
+
+    public void LifeUp()
+    {
+        if (currentHealth <= 2)
+        {
+            currentHealth += 1;
+            gameManager.setHealth(currentHealth);
+        }
+    }
 }
