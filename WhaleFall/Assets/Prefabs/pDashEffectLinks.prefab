@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2074075689041131231}
   - component: {fileID: -3530361384027824409}
-  - component: {fileID: 4462016700804217647}
+  - component: {fileID: 4637749312645691375}
   m_Layer: 0
   m_Name: pDashEffectLinks
   m_TagString: Untagged
@@ -74,9 +74,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 774392831, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
+  m_Sprite: {fileID: -470188778, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 5, y: 5}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4462016700804217647
+--- !u!114 &4637749312645691375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,18 +94,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 8872183773494023083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b583a64571224b84b9b48cf32f228a03, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f9067e51e236a444a3b1941b87637b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   frameArray:
-  - {fileID: 774392831, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
-  - {fileID: -979830494, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
-  - {fileID: -1011528727, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
-  - {fileID: -1628447651, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
-  - {fileID: 801273504, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
-  - {fileID: 980710950, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
-  - {fileID: 155683958, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
-  - {fileID: 2105636491, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
   - {fileID: -470188778, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
+  - {fileID: 2105636491, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
+  - {fileID: 155683958, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
+  - {fileID: 980710950, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
+  - {fileID: 801273504, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
+  - {fileID: -1628447651, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
+  - {fileID: -1011528727, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
+  - {fileID: -979830494, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
+  - {fileID: 774392831, guid: 29e3762adfe39fb40b727e59e952d0d2, type: 3}
   loop: 0
   destroyOnLoop: 1
