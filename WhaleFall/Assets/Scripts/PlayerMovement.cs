@@ -92,8 +92,12 @@ public class PlayerMovement : MonoBehaviour
         {
             facingRight = !facingRight;
             Vector3 scale = transform.localScale;
+            Vector3 position = transform.position;
             scale.x *= -1;
             transform.localScale = scale;
+            
+            position.x += scale.x * 0.5f;
+            transform.position = position;
         }
     }
 
