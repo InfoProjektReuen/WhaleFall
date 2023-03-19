@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject globalLightObject;
 
+    public AudioSource mainMenuMusic;
+
+    public bool playingMainMenu = false;
 
     void Start()
     {
@@ -30,7 +33,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(SceneManager.GetActiveScene().name == "StartMenu" && !playingMainMenu)
+        {
+            playMainMenuMusic();
+        }
     }
 
     public void setHealth(int health)
@@ -45,5 +51,13 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(Leben, HealthContainer.transform);
         }
+    }
+
+
+    //Game-Music
+    private void playMainMenuMusic()
+    {
+        mainMenuMusic.Play();
+        playingMainMenu = true;
     }
 }

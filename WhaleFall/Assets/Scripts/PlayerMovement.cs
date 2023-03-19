@@ -11,9 +11,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float playerSpeed = 5.0f; //Beispielwerte können nach Ausprobieren gerne geändert werden
     [SerializeField] private float jumpPower = 15.0f;
     [SerializeField] private float superJumpForce = 30.0f;
-    public float cooldownTime_sJump  = 5f;
+    public float cooldownTime_sJump = 5f;
     [SerializeField] private float dashDistance = 10f;
-    public float cooldownTime_Dash  = 5f;
+    public float cooldownTime_Dash = 5f;
 
     private bool canSuperJump = true;
     private Rigidbody2D _playerRigidbody;
@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     private bool facingRight = true;
 
     public WeaponSystem WeaponSystem;
+
+    public AudioSource dashSound;
 
     private void Start()
     {
@@ -40,11 +42,13 @@ public class PlayerMovement : MonoBehaviour
         ChangeLookDirection();
         MovePlayer();
 
-        if (Input.GetKey(KeyCode.Space) && IsGrounded()){
+        if (Input.GetKey(KeyCode.Space) && IsGrounded())
+        {
             Jump();
         }
 
-        else if(Input.GetKey(KeyCode.Return) && IsGrounded()){
+        else if (Input.GetKey(KeyCode.Return) && IsGrounded())
+        {
             SJump();
         }
 
@@ -53,11 +57,13 @@ public class PlayerMovement : MonoBehaviour
             WeaponSystem.Fire();
         }
 
-        else if(CanMove(transform.right, dashDistance) && facingRight){
+        else if (CanMove(transform.right, dashDistance) && facingRight)
+        {
             handleDash();
         }
 
-        else if(CanMove(-transform.right, dashDistance) && !facingRight){
+        else if (CanMove(-transform.right, dashDistance) && !facingRight)
+        {
             handleDash();
         }
 
@@ -67,19 +73,20 @@ public class PlayerMovement : MonoBehaviour
         var horizontalInput = Input.GetAxisRaw("Horizontal");
         _playerRigidbody.velocity = new Vector2(horizontalInput * playerSpeed, _playerRigidbody.velocity.y);
     }
-    private void Jump() {_playerRigidbody.velocity = new Vector2( 0, jumpPower); _playerRigidbody.gravityScale = 4;}
+    private void Jump() { _playerRigidbody.velocity = new Vector2(0, jumpPower); _playerRigidbody.gravityScale = 4; }
 
     private bool IsGrounded()
     {
-        
-       return (_playerRigidbody.velocity.y == 0f);
+
+        return (_playerRigidbody.velocity.y == 0f);
     }
 
-    private void SJump(){
+    private void SJump()
+    {
         if (canSuperJump && (Time.time - lastSuperJumpTime) > cooldownTime_sJump)
         {
-            
-            _playerRigidbody.velocity = new Vector2( 0, superJumpForce);
+
+            _playerRigidbody.velocity = new Vector2(0, superJumpForce);
             _playerRigidbody.gravityScale = 5;
 
             lastSuperJumpTime = Time.time;
@@ -95,38 +102,41 @@ public class PlayerMovement : MonoBehaviour
             Vector3 position = transform.position;
             scale.x *= -1;
             transform.localScale = scale;
-            
+
             position.x += scale.x * 0.5f;
             transform.position = position;
         }
     }
 
-    private bool CanMove(Vector2 dir, float distance){
+    private bool CanMove(Vector2 dir, float distance)
+    {
         return (Physics2D.Raycast(transform.position, dir, distance).collider == null);
     }
 
-    private void handleDash(){
-    if(Input.GetKeyDown(KeyCode.Tab) && (Time.time - lastDashTime) > cooldownTime_Dash){
-        if(facingRight){
-            Vector3 beforeDashPosition = transform.position - new Vector3 (0f, 5.5f, 0f);
-            GameObject dashEffectObject = Instantiate(pDashEffect, beforeDashPosition, Quaternion.identity);
-            float dashEffectWidth = 2.5f;
-            dashEffectObject.transform.localScale = new Vector3(dashDistance/dashEffectWidth, 1f, 1f);
-            transform.position += transform.right * dashDistance;
+    private void handleDash()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab) && (Time.time - lastDashTime) > cooldownTime_Dash)
+        {
+            dashSound.Play();
+            if (facingRight)
+            {
+                Vector3 beforeDashPosition = transform.position - new Vector3(0f, 5.5f, 0f);
+                GameObject dashEffectObject = Instantiate(pDashEffect, beforeDashPosition, Quaternion.identity);
+                float dashEffectWidth = 2.5f;
+                dashEffectObject.transform.localScale = new Vector3(dashDistance / dashEffectWidth, 1f, 1f);
+                transform.position += transform.right * dashDistance;
 
+            }
+            else
+            {
+                Vector3 beforeDashPosition = transform.position - new Vector3(0f, 5.5f, 0f);
+                Vector3 dashEndPosition = beforeDashPosition - transform.right * dashDistance; // speichere die Endposition des Dashs
+                GameObject dashEffectObject = Instantiate(pDashEffect, dashEndPosition, Quaternion.identity);
+                float dashEffectWidth = 10f;
+                dashEffectObject.transform.localScale = new Vector3(dashDistance / dashEffectWidth, 1f, 1f);
+                transform.position -= transform.right * dashDistance;
+            }
+            lastDashTime = Time.time;
         }
-        else{
-            Vector3 beforeDashPosition = transform.position - new Vector3 (0f, 5.5f, 0f);
-            Vector3 dashEndPosition = beforeDashPosition - transform.right * dashDistance; // speichere die Endposition des Dashs
-            GameObject dashEffectObject = Instantiate(pDashEffect, dashEndPosition, Quaternion.identity);
-            float dashEffectWidth = 10f;
-            dashEffectObject.transform.localScale = new Vector3(dashDistance/dashEffectWidth, 1f, 1f);
-            transform.position -= transform.right * dashDistance;
-        }
-        lastDashTime = Time.time;
     }
-}
-
-
-   
 }

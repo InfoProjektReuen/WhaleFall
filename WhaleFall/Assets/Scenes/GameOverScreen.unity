@@ -221,8 +221,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1264d0f1ce37ce4883885ce25745ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HealthContainer: {fileID: 0}
+  Leben: {fileID: 0}
+  emptyLivePrefab: {fileID: 0}
+  healthManager: {fileID: 0}
+  collisionDetection: {fileID: 0}
   _gameOver: 0
   _score: 0
+  emptyLives: -1
+  globalLightObject: {fileID: 0}
+  mainMenuMusic: {fileID: 0}
+  playingMainMenu: 0
 --- !u!4 &624907480
 Transform:
   m_ObjectHideFlags: 0
