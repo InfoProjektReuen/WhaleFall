@@ -18,7 +18,7 @@ public class Dash : MonoBehaviour
     }
     
     private void handleDash(){
-        if(Input.GetKeyDown(KeyCode.Tab)){
+        if(Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.E)){
             
             transform.position += transform.forward * dashDistance;
         }
