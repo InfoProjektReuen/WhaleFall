@@ -20,4 +20,12 @@ public class GameOverManager : MonoBehaviour
             }
         }
     }
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Return))
+        {
+            ReturnToMenu();
+        }
+    }
 }

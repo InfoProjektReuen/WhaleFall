@@ -11,4 +11,12 @@ public class Button : MonoBehaviour
         PlayerPrefs.SetInt("Score", 0);
         gameStarted = true;
     }
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Return))
+        {
+            StartGame();
+        }
+    }
 }
