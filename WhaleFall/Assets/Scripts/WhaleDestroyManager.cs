@@ -5,6 +5,7 @@ using UnityEngine;
 public class WhaleDestroyManager : MonoBehaviour
 {
     public GameObject explosionPrefab;
+    //public GameObject explosionAnimationPrefab;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -13,7 +14,11 @@ public class WhaleDestroyManager : MonoBehaviour
             if (gameObject.CompareTag("GigaWal") || gameObject.CompareTag("NormalerWal")){
                 var test = Instantiate(explosionPrefab, transform);
                 test.transform.SetParent(null);
+                //var explosion = Instantiate(explosionAnimationPrefab, transform);
+                //explosion.transform.SetParent(null);
                 Destroy(test, 2);
+                //Destroy(explosion, 2);
+                
             }
             Destroy(gameObject);
         }
