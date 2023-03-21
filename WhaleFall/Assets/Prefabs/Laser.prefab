@@ -171,5 +171,6 @@ MonoBehaviour:
   Rigidbody: {fileID: 7395176381776892487}
   BulletSpeed: 30
   myGameManager: {fileID: 4307966090103099039, guid: 155774686c3262c4fa58ebbd5c303273, type: 3}
-  explosionPrefab: {fileID: 3189428772464247106, guid: 5cf3f797aea24cb4492a7bcbeb3b2158, type: 3}
+  explosionPrefab: {fileID: 4876077279555814864, guid: 24ad9ff72e71a534db98d8d4ff97dd0f, type: 3}
+  explosionPrefabGW: {fileID: 3189428772464247106, guid: 5cf3f797aea24cb4492a7bcbeb3b2158, type: 3}
   explosionAnimationPrefab: {fileID: 927064702223527662, guid: c8eeb28d235af65468664da8a88ddf4c, type: 3}

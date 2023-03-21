@@ -10,6 +10,7 @@ public class Bullet : MonoBehaviour
     public GameManager myGameManager;
 
     public GameObject explosionPrefab;
+    public GameObject explosionPrefabGW;
     public GameObject explosionAnimationPrefab;
 
     private void Start()
@@ -24,7 +25,7 @@ public class Bullet : MonoBehaviour
     {
         if(other.CompareTag("NormalerWal"))
         {
-            PlayExplosion(other, gameObject);
+            PlayExplosion(other, gameObject, explosionPrefab);
 
             Destroy(other.gameObject); //Wal
 
@@ -36,7 +37,7 @@ public class Bullet : MonoBehaviour
         }
         else if (other.CompareTag("GigaWal"))
         {
-            PlayExplosion(other, gameObject);
+            PlayExplosion(other, gameObject, explosionPrefabGW);
 
             Destroy(other.gameObject); //Wal
 
@@ -48,10 +49,10 @@ public class Bullet : MonoBehaviour
         }
     }
     
-    public void PlayExplosion(Collider2D whale, GameObject bullet)
+    public void PlayExplosion(Collider2D whale, GameObject bullet, GameObject soundPrefab)
     {
         Vector3 collisionPoint = gameObject.transform.position;
-        var explosionSound = Instantiate(explosionPrefab, collisionPoint, Quaternion.identity);
+        var explosionSound = Instantiate(soundPrefab, collisionPoint, Quaternion.identity);
         var explosionAnimationObject = new GameObject("ExplosionAnimation");
         explosionAnimationObject.transform.position = collisionPoint;
         explosionAnimationObject.transform.localScale = Vector3.one;
