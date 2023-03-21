@@ -636,10 +636,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 0.3882353, g: 0.13333334, b: 0.22352941, a: 1}
+    m_HighlightedColor: {r: 0.39607844, g: 0.22745098, b: 0.28627452, a: 1}
+    m_PressedColor: {r: 0.23529412, g: 0.23137255, b: 0.23529412, a: 1}
+    m_SelectedColor: {r: 0.3882353, g: 0.13333334, b: 0.22352941, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2878,8 +2878,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4292467161
+  m_fontColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3043,10 +3043,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 0.3882353, g: 0.13333334, b: 0.22352941, a: 1}
+    m_HighlightedColor: {r: 0.39607844, g: 0.22745098, b: 0.28627452, a: 1}
+    m_PressedColor: {r: 0.23529412, g: 0.23137255, b: 0.23529412, a: 1}
+    m_SelectedColor: {r: 0.3882353, g: 0.13333334, b: 0.22352941, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3130,6 +3130,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1925113146}
   myPauseMenu: {fileID: 990039706}
+  GameManager: {fileID: 1263353205}
+  audioSources: []
 --- !u!1 &503980701
 GameObject:
   m_ObjectHideFlags: 0
@@ -3197,8 +3199,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4292467161
+  m_fontColor: {r: 0.8490566, g: 0.8490566, b: 0.8490566, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3498,7 +3500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 80}
+  m_AnchoredPosition: {x: 0, y: 49.9}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &567658870
@@ -4678,7 +4680,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4307966090103099039, guid: 155774686c3262c4fa58ebbd5c303273, type: 3}
   m_PrefabInstance: {fileID: 4307966090248720532}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1263353205}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b1264d0f1ce37ce4883885ce25745ebd, type: 3}
@@ -4831,6 +4833,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1925113146}
   isPaused: 0
+  GameManager: {fileID: 1263353205}
+  audioSources: []
 --- !u!4 &990039707
 Transform:
   m_ObjectHideFlags: 0
@@ -5192,6 +5196,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1263353205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4307966090103099038, guid: 155774686c3262c4fa58ebbd5c303273, type: 3}
+  m_PrefabInstance: {fileID: 4307966090248720532}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1298883415 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 387338719103915048, guid: 9ae930582240e9e428d8f88cb0dc287e, type: 3}
@@ -6324,7 +6333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
