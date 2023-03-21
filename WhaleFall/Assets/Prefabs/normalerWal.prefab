@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 4876077279555814864, guid: 24ad9ff72e71a534db98d8d4ff97dd0f, type: 3}
-  explosionAnimationPrefab: {fileID: 2000375230823003050, guid: c92b93122491c34469a0bd6b8e04659b, type: 3}
+  explosionAnimationPrefab: {fileID: 927064702223527662, guid: c8eeb28d235af65468664da8a88ddf4c, type: 3}
 --- !u!60 &705163906043515650
 PolygonCollider2D:
   m_ObjectHideFlags: 0
