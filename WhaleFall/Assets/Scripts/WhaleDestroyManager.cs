@@ -5,20 +5,22 @@ using UnityEngine;
 public class WhaleDestroyManager : MonoBehaviour
 {
     public GameObject explosionPrefab;
-    //public GameObject explosionAnimationPrefab;
+    public GameObject explosionAnimationPrefab;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground"))
         {
-            if (gameObject.CompareTag("GigaWal") || gameObject.CompareTag("NormalerWal")){
-                var test = Instantiate(explosionPrefab, transform);
-                test.transform.SetParent(null);
-                //var explosion = Instantiate(explosionAnimationPrefab, transform);
-                //explosion.transform.SetParent(null);
-                Destroy(test, 2);
-                //Destroy(explosion, 2);
-                
+            if (gameObject.CompareTag("GigaWal") || gameObject.CompareTag("NormalerWal"))
+            {
+                Vector3 collisionPoint = other.contacts[0].point;
+                var explosionSound = Instantiate(explosionPrefab, collisionPoint, Quaternion.identity);
+                var explosionAnimationObject = new GameObject("ExplosionAnimation");
+                explosionAnimationObject.transform.position = collisionPoint;
+                explosionAnimationObject.transform.localScale = Vector3.one;
+                var explosionAnimation = Instantiate(explosionAnimationPrefab, explosionAnimationObject.transform);
+                Destroy(explosionSound, 2);
+                Destroy(explosionAnimationObject, 2);
             }
             Destroy(gameObject);
         }

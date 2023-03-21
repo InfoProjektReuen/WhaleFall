@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
-        else if (Input.GetKey(KeyCode.R) && IsGrounded())
+        else if (Input.GetKey(KeyCode.E) && IsGrounded())
         {
             SJump();
         }
@@ -119,8 +119,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void handleDash()
     {
-        if ((Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Q)) && (Time.time - lastDashTime) > cooldownTime_Dash)
+        var current = false;
+        if (Input.GetKey(KeyCode.LeftShift) && (Time.time - lastDashTime) > cooldownTime_Dash && current == false)
         {
+            current = true;
             dashSound.Play();
             if (facingRight)
             {
@@ -139,11 +141,12 @@ public class PlayerMovement : MonoBehaviour
                 GameObject dashEffectObject = Instantiate(pDashEffect_Links, dashEndPosition, Quaternion.identity);
                 float dashEffectWidth = 2.5f;
                 dashEffectObject.transform.localScale = new Vector3(dashDistance / dashEffectWidth, 1f, 1f);
+                dashEffectObject.transform.localPosition = new Vector3(-dashEffectObject.transform.localPosition.x, dashEffectObject.transform.localPosition.y, dashEffectObject.transform.localPosition.z); // Position umdrehen
                 transform.position -= transform.right * dashDistance;
-
                 Destroy(dashEffectObject, 2);
             }
             lastDashTime = Time.time;
+            current = false;
         }
     }
 }
