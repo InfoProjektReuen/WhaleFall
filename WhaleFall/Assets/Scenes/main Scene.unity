@@ -2560,8 +2560,8 @@ MonoBehaviour:
   NormalWhalePrefabs:
   - {fileID: 498017098763521397, guid: 2e71758707196e0479bc29f54aa11c0a, type: 3}
   - {fileID: 7900822073759836397, guid: b2fe38d4d49ba194fbd00a2fc0fffc09, type: 3}
-  SpawnRateMinimum: 0.5
-  SpawnRateMaximum: 1.5
+  SpawnRateMinimum: 0.1
+  SpawnRateMaximum: 0.8
   normalWhaleSpeedMin: 0.5
   normalWhaleSpeedMax: 3
   Damage: 1
@@ -4776,8 +4776,8 @@ MonoBehaviour:
   gigaWhalePrefabs:
   - {fileID: 2777907605220077616, guid: 8cdd64b6df76a7f43968b032b921f1df, type: 3}
   - {fileID: 8621874023585707883, guid: feb3464abb6c78247abf01e9abd271a4, type: 3}
-  SpawnRateMinimumGW: 2.2
-  SpawnRateMaximumGW: 6.2
+  SpawnRateMinimumGW: 1.8
+  SpawnRateMaximumGW: 5
   gigaWhaleSpeedMinGW: 0.0001
   gigaWhaleSpeedMaxGW: 0.001
   Damage: 2
