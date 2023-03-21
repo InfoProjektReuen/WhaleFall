@@ -8,8 +8,8 @@ public class normalWhaleSpawnerManager : MonoBehaviour
     public GameObject Player;
     public GameObject[] NormalWhalePrefabs;
 
-    public float SpawnRateMinimum = 0.5f;
-    public float SpawnRateMaximum = 1.5f;
+    public float SpawnRateMinimum = 0.1f;
+    public float SpawnRateMaximum = 0.8f;
 
     public float normalWhaleSpeedMin = 0.5f;
     public float normalWhaleSpeedMax = 3;
