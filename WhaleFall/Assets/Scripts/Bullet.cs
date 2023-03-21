@@ -9,6 +9,9 @@ public class Bullet : MonoBehaviour
 
     public GameManager myGameManager;
 
+    public GameObject explosionPrefab;
+    public GameObject explosionAnimationPrefab;
+
     private void Start()
     {
         myGameManager = FindObjectOfType<GameManager>();
@@ -21,6 +24,8 @@ public class Bullet : MonoBehaviour
     {
         if(other.CompareTag("NormalerWal"))
         {
+            PlayExplosion(other, gameObject);
+
             Destroy(other.gameObject); //Wal
 
             Destroy(gameObject); //Laser
@@ -31,6 +36,8 @@ public class Bullet : MonoBehaviour
         }
         else if (other.CompareTag("GigaWal"))
         {
+            PlayExplosion(other, gameObject);
+
             Destroy(other.gameObject); //Wal
 
             Destroy(gameObject); //Laser
@@ -39,5 +46,17 @@ public class Bullet : MonoBehaviour
             PlayerPrefs.SetInt("Score", myGameManager._score);
             PlayerPrefs.Save();
         }
+    }
+    
+    public void PlayExplosion(Collider2D whale, GameObject bullet)
+    {
+        Vector3 collisionPoint = gameObject.transform.position;
+        var explosionSound = Instantiate(explosionPrefab, collisionPoint, Quaternion.identity);
+        var explosionAnimationObject = new GameObject("ExplosionAnimation");
+        explosionAnimationObject.transform.position = collisionPoint;
+        explosionAnimationObject.transform.localScale = Vector3.one;
+        var explosionAnimation = Instantiate(explosionAnimationPrefab, explosionAnimationObject.transform);
+        Destroy(explosionSound, 2);
+        Destroy(explosionAnimationObject, 2);
     }
 }
